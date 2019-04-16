@@ -1,0 +1,5 @@
+dotnet publish -c Release -o out
+docker build --pull -t dotnetapp .
+docker tag dotnetapp:latest jober64/jober:latest
+docker push jober64/jober:latest
+oc import-image msdnc:latest --from=docker.io/jober64/jober:latest --confirm

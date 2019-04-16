@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /app
 COPY out ./
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+USER 1001
+ENTRYPOINT ["dotnet", "webapp.dll"]
